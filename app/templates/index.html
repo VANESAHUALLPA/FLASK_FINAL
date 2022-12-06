@@ -32,8 +32,8 @@
                             <h4>
                                 <dt>First Seen in:</dt> {{ item.episode }}
                             </h4>
-    
-                            <a href="{{ url_for('personaje_router.profile', id=item._id)}}" class="btn btn-success  m-3">
+                            {# color de boton cambiado #}    
+                            <a href="{{ url_for('personaje_router.profile', id=item._id)}}" class="btn btn-info  m-3">
                                 <h4> Ver Perfil</h4>
                             </a>
                             <a href="{{ url_for('personaje_router.delete_profile', id=item._id)}}"

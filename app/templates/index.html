@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for item in characters %}
+{#TRABAJA CON BOOSTRAP 5 border border-danger m-3#}
+<div class="container ">
+    <div class="row ">
+        <div class="container ">
+            <div class="card text-center ">
+                <div class="card-body">
+                    <div class="row bg-light">
+                        <div class="col-6 border ">
+                            <center><img class="text-align" src="{{ item.image_url }}" alt=" centered {{ item.name }}"
+                                    width="300" height="270">
+                            </center>
+                        </div>
+                        <div class="col-6 ">
+                            <h4>
+                                <dt>Nombre:</dt>
+                            </h4>
+                            <h4>{{ item.name }}</h4>
+                            <h4>
+                                <dt>Alive:</dt> {{ item.alive }}
+                            </h4>
+                            <h4>
+                                <dt>Especies:</dt> {{ item.species }}
+                            </h4>
+                            <h4>
+                                <dt>Last known location:</dt> {{ item.location_name }}
+                            </h4>
+                            <h4>
+                                <dt>First Seen in:</dt> {{ item.episode }}
+                            </h4>
+    
+                            <a href="{{ url_for('personaje_router.profile', id=item._id)}}" class="btn btn-success  m-3">
+                                <h4> Ver Perfil</h4>
+                            </a>
+                            <a href="{{ url_for('personaje_router.delete_profile', id=item._id)}}"
+                                class="btn btn-danger m-3">
+                                <h4>Eliminar</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+               
+            </div>
+    
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
